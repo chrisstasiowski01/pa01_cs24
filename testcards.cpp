@@ -177,6 +177,8 @@ void test_player_print_hand(){
   cout << "Test 2:" << endl << "Expected:" << endl;
   cout << "Player 2's cards:" << endl << "h 3" << endl << "s 2" << endl
     << "c a" << endl << "c 3" << endl << "h 9" << endl << "s a" << endl;
+  cout << "Actual:" << endl;
+  p2.printHand();
     cout << "END PRINT HAND TEST" << endl << endl;
 }
 

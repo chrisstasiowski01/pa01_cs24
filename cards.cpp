@@ -123,7 +123,7 @@ Player::Player(string n, CardList& h){
 // prints each card in hand on new line
 void Player::printHand(){
   cout << name << "'s cards:" << endl;
-  cout << &hand;
+  cout << hand;
 }
 
 
