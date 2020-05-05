@@ -111,7 +111,7 @@ ostream& operator<<(ostream &output, const CardList& c){
     cout << n->cardType << endl;
     n = n->next;
   }
-  return;
+  return output;
 }
 // PLAYER CLASS
 
