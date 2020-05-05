@@ -15,6 +15,7 @@ int main(){
   test_CardList_destructor();
   test_erase();
   test_cout_overload();
+  test_player_print_hand();
   // runAll();
   return 0;
 }
@@ -160,5 +161,22 @@ void test_cout_overload(){
   cout << "s 3" << endl << "h 6" << endl << "d j" << endl << "c 3" << endl << "Actual:" << endl;
   cout << cTest;
   cout << "END << OVERLOAD TEST" << endl << endl;
+}
+
+void test_player_print_hand(){
+  cout << "PRINT HAND TEST:" << endl;
+  CardList p1Test, p2Test;
+  p1Test.createHand("testHand1.txt");
+  p2Test.createHand("testHand3.txt");
+  Player p1 = Player("Player 1", p1Test);
+  Player p2 = Player("Player 2", p2Test);
+  cout << "Test 1:" << endl << "Expected:" << endl;
+  cout << "Player 1's cards:" << endl << "h 1" << endl << "s 3" << endl;
+  cout << "Actual:" << endl;
+  p1.printHand();
+  cout << "Test 2:" << endl << "Expected:" << endl;
+  cout << "Player 2's cards:" << endl << "h 3" << endl << "s 2" << endl
+    << "c a" << endl << "c 3" << endl << "h 9" << endl << "s a" << endl;
+    cout << "END PRINT HAND TEST" << endl << endl;
 }
 

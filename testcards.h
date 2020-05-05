@@ -32,6 +32,7 @@ void test_contains();
 void test_CardList_destructor();
 void test_erase();
 void test_cout_overload();
+void test_player_print_hand();
 
 void START_TEST(string testname){
   cout<<"Start "<<testname<<endl;
