@@ -122,7 +122,7 @@ Player::Player(string n, CardList& h){
 }
 
 Player::~Player(){
-  return;
+  delete hand.first;
 }
 
 // prints each card in hand on new line
