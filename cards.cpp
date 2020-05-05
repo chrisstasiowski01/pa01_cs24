@@ -121,6 +121,10 @@ Player::Player(string n, CardList& h){
   hand = h;
 }
 
+Player::~Player(){
+  delete this;
+}
+
 // prints each card in hand on new line
 void Player::printHand(){
   cout << name << "'s cards:" << endl;
