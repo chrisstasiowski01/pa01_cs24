@@ -15,7 +15,7 @@ int main(){
   test_CardList_destructor();
   test_erase();
   test_cout_overload();
-  test_player_print_hand();
+  // test_player_print_hand();
   // runAll();
   return 0;
 }
