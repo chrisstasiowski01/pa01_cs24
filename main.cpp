@@ -1,3 +1,4 @@
+#include "cards.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -26,17 +27,44 @@ int main(int argv, char** argc){
 
   // Create two objects of the class you defined 
   // to contain two sets of cards in two input files
+  CardList list1, list2;
+  list1.createHand(argc[1]);
+  list2.createHand(argc[2]);
 
-  // Read each file and store cards
-  while (getline (cardFile1, line) && (line.length() > 0)){
+  Player a = Player("Alice", list1);
+  Player b = Player("Bob", list2);
+
+  while(1){
+    Card* aCycle = a.hand.first;
+    while(aCycle){
+      if((b.hand).contains(aCycle->cardType) == true){
+        cout << "Alice picked matching card " << aCycle->cardType << endl;
+        (b.hand).erase(aCycle->cardType);
+        (a.hand).erase(aCycle->cardType);
+        break;
+      }else{
+        aCycle = aCycle->next;
+      }
+    }
+    Card* bCycle = b.hand.first;
+    while(bCycle){
+      if((a.hand).contains(bCycle->cardType) == true){
+        cout << "Bob picked matching card " << bCycle->cardType << endl;
+        (a.hand).erase(bCycle->cardType);
+        (b.hand).erase(bCycle->cardType);
+        break;
+      }else{
+        bCycle = bCycle->next;
+      }
+    }
+    if((aCycle == NULL) && (bCycle == NULL)){
+      break;
+    }
   }
-  cardFile1.close();
-
-  while (getline (cardFile2, line) && (line.length() > 0)){
-  }
-  cardFile2.close();
-
-  // Start the game
+  cout << endl;
+  a.printHand();
+  cout << endl;
+  b.printHand();
 
   return 0;
 }

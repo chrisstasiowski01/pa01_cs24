@@ -8,7 +8,7 @@ testcards: testcards.o cards.o
 	g++ $(CXX_FLAG) -o testcards testcards.o cards.o
 
 game: main.o cards.o
-	g++ -c $(CXX_FLAG) game cards.o main.o
+	g++ $(CXX_FLAG) -o game main.o cards.o
 
 cards.o: cards.cpp
 	g++ -c $(CXX_FLAG) cards.cpp

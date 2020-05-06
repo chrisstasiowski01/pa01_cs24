@@ -51,10 +51,10 @@ class Player{
   public:
     Player(string n, CardList& h); // constructor
     void printHand(); // prints each card in hand on a new line
-  
-  private:
     string name;
     CardList hand;
+  private:
+
 };
 
 #endif
