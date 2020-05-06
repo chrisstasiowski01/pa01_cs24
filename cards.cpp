@@ -127,5 +127,9 @@ void Player::printHand(){
   cout << hand;
 }
 
+Player::~Player(){
+  hand.first = NULL;
+}
+
 
 

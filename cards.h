@@ -50,6 +50,7 @@ class Player{
   
   public:
     Player(string n, CardList& h); // constructor
+    ~Player();
     void printHand(); // prints each card in hand on a new line
     string name;
     CardList hand;
