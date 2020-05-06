@@ -7,43 +7,31 @@ using namespace std;
 #ifndef CARDS_H
 #define CARDS_H
 
-
-class Card{
-  public:
+struct Card{
     string cardType;
     Card* next;
 };
 
 class CardList{
-
-    public:
-      CardList() : first(0) {}// constructor
-      ~CardList(); // destructor
-      bool contains(string search) const; // returns true if hand contains desired card
-      void erase(string del); // erases desired value from list
-      void append(string card); // appends desired card to end of list
-      void createHand(string filename); // creates hand from input text file
-      void print() const; //prints hand
-      friend ostream& operator<<(ostream& output, const CardList& c);
-      Card* first;
-      
-    private:
-      
-
-
-
+  public:
+    CardList() : first(0) {}// constructor
+    ~CardList(); // destructor
+    bool contains(string search) const; // returns true if hand contains desired card
+    void erase(string del); // erases desired value from list
+    void append(string card); // appends desired card to end of list
+    void createHand(string filename); // creates hand from input text file
+    void print() const; //prints hand
+    friend ostream& operator<<(ostream& output, const CardList& c); // prints each card in new line
+    Card* first; // pointer to first card
 };
 
-class Player{
-  
+class Player{  
   public:
     Player(string n, CardList& h); // constructor
-    ~Player();
+    ~Player(); // destructor
     void printHand(); // prints each card in hand on a new line
     string name;
     CardList hand;
-  private:
-
 };
 
 #endif

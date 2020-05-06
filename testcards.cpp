@@ -15,36 +15,14 @@ int main(){
 
 void runAll(){
   cout << endl;
-
+  test_append_empty_list();
+  test_append_single_element_list();
   test_createHand();
   test_contains();
   test_CardList_destructor();
   test_erase();
   test_cout_overload();
   test_player_print_hand();
-}
-
-/* void test_append(){
-  // START_TEST("test_append");
-  test_append_empty_list();
-  test_append_single_element_list();
-  // END_TEST("test_append");
-
-}
-*/
-void test_equal(){
-  START_TEST("test_equal");
-  test_equal_empty_list();
-  //test_equal_single_element_list();
-  END_TEST("test_equal");
-
-}
-
-void test_card(){
-  START_TEST("test_card");
-  test_card_operator_double_equal();
-  //test_equal_single_element_list();
-  END_TEST("test_card");
 }
 
 // CARDLIST TESTS
@@ -61,29 +39,16 @@ void test_append_empty_list(){
 }
 
 void test_append_single_element_list(){ 
-  // Tests cases should be independent,
-    // small, fast, orthogonal (test for different cases)
   cout << "APPEND TEST 2:" << endl;
   cout << "Hand before append: ";
   CardList test1;
   test1.createHand("testHand1.txt");
   test1.print();
   cout << endl;
-
   cout << "Hand after appending 'h 9': ";
   test1.append("h 9");
   test1.print();
   cout << endl << "END APPEND TEST 2" << endl << endl;
-
-}
-void test_equal_empty_list(){ 
-  string testname = "case 0: [], []";
-  CardList l1, l2;
-  assertEquals(l1.first,l2.first);
-}
-
-void test_card_operator_double_equal(){
-  // Test to check if == is overloaded for card
 }
 
 void test_createHand(){
@@ -139,7 +104,6 @@ void test_erase(){
   etest.erase("s a");
   etest.print();
   cout << endl;
-
   cout << "Hand after erasing 'c 3' (middle card): ";
   etest.erase("c 3");
   etest.print();

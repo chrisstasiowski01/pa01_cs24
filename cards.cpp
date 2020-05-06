@@ -16,14 +16,6 @@ void CardList::createHand(string filename){
   ifstream file;
   string line;
   file.open(filename);
-  
-  // checks if file exists
-  /*
-  if(!file){
-    cerr << "File does not exist." << endl;
-    return;
-  }
-  */
   while(1){
     getline(file, line);
     if(!file){
@@ -57,6 +49,7 @@ bool CardList::contains(string search) const{
   return false;
 }
 
+// removes desired card from list
 void CardList::erase(string del){
   if (contains(del) == false){
     return;
@@ -78,6 +71,7 @@ void CardList::erase(string del){
   }
 }
 
+// adds card to end of list
 void CardList::append(string card) {
     if (first == 0) { // empty list
         
@@ -96,6 +90,7 @@ void CardList::append(string card) {
     }
 }
 
+// prints cards on one line (for testing)
 void CardList::print() const {
     Card *n = first;
     cout << '[';
@@ -107,6 +102,8 @@ void CardList::print() const {
     }
     cout << ']';
 }
+
+// prints each card in hand on new line (for game)
 ostream& operator<<(ostream &output, const CardList& c){
   Card* n = c.first;
   while(n){
@@ -118,7 +115,7 @@ ostream& operator<<(ostream &output, const CardList& c){
 
 // PLAYER CLASS
 
-// consrtructor (gives name to player)
+// constructor (gives name and hand to player)
 Player::Player(string n, CardList& h){
   name = n;
   hand = h;
@@ -130,9 +127,9 @@ void Player::printHand(){
   cout << hand;
 }
 
+// destructor for player class
 Player::~Player(){
   hand.first = NULL;
 }
-
 
 
