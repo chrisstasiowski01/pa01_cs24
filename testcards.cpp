@@ -5,35 +5,33 @@
 #include "testcards.h"
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 
 int main(){
+  runAll();
+  return 0;
+}
+
+void runAll(){
   cout << endl;
-  test_append();
+
   test_createHand();
   test_contains();
   test_CardList_destructor();
   test_erase();
   test_cout_overload();
   test_player_print_hand();
-  // runAll();
-  return 0;
 }
 
-void runAll(){
-  test_append();
-  test_equal();
-  test_card();
-}
-
-void test_append(){
+/* void test_append(){
   // START_TEST("test_append");
   test_append_empty_list();
   test_append_single_element_list();
   // END_TEST("test_append");
 
 }
-
+*/
 void test_equal(){
   START_TEST("test_equal");
   test_equal_empty_list();

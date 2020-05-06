@@ -2,28 +2,16 @@
 //Authors: Chris Stasiowski
 //All class declarations go here
 #include <iostream>
+#include <string>
 using namespace std;
 #ifndef CARDS_H
 #define CARDS_H
-/*
+
+
 class Card{
-
   public:
-
-    Card(); // constructor
-    void print() const; // prints card
-    friend bool operator==(const Card& card1, const Card& card2); // compares two cards
-    ~Card(); // destructor
-
-  private:
     string cardType;
     Card* next;
-};
-*/
-
-struct Card{
-  string cardType;
-  Card* next;
 };
 
 class CardList{

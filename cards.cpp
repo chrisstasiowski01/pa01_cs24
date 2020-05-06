@@ -4,6 +4,7 @@
 #include "cards.h"
 #include <iostream>
 #include <fstream>
+#include <string>
 using namespace std;
 
 // CARDLIST CLASS
@@ -17,11 +18,12 @@ void CardList::createHand(string filename){
   file.open(filename);
   
   // checks if file exists
+  /*
   if(!file){
     cerr << "File does not exist." << endl;
     return;
   }
-
+  */
   while(1){
     getline(file, line);
     if(!file){
@@ -113,6 +115,7 @@ ostream& operator<<(ostream &output, const CardList& c){
   }
   return output;
 }
+
 // PLAYER CLASS
 
 // consrtructor (gives name to player)
